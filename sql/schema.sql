@@ -21,8 +21,8 @@ CREATE TABLE IF NOT EXISTS products
 (
     id             BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     marketplace_id BIGINT REFERENCES marketplaces (id) ON DELETE CASCADE ON UPDATE CASCADE NOT NULL,
-    name           VARCHAR                                                                 NOT NULL,
-    is_adult_only  BOOLEAN                                                                 NOT NULL,
+    name           VARCHAR,
+    is_adult_only  BOOLEAN,
     link           VARCHAR UNIQUE                                                          NOT NULL,
     image_id       BIGINT REFERENCES media_metadata (id) ON DELETE SET NULL ON UPDATE CASCADE
 );
